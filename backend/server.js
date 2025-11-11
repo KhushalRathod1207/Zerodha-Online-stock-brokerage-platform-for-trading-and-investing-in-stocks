@@ -101,9 +101,7 @@ app.get("/", (req, res) => {
     res.send("🚀 Zerodha Backend running successfully on Render!");
 });
 
-// =======================
-// ✅ Start Server
-// =======================
+
 app.listen(PORT, () => {
     console.log(`🚀 Server live on port ${PORT} (Render-ready)`);
 });
