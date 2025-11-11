@@ -36,7 +36,7 @@ function RightSection({
                         {googlePlayURL && (
                             <a href={googlePlayURL}>
                                 <img
-                                    src="src/assets/images/google-play-badge.svg"
+                                    src="/google-play-badge.svg"
                                     alt="Google Play"
                                     className="h-10"
                                 />
@@ -45,7 +45,7 @@ function RightSection({
                         {appStoreURL && (
                             <a href={appStoreURL}>
                                 <img
-                                    src="src/assets/images/appstore-badge.svg"
+                                    src="/appstore-badge.svg"
                                     alt="App Store"
                                     className="h-10"
                                 />

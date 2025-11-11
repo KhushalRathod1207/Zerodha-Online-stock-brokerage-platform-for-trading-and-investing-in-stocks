@@ -10,7 +10,7 @@ function Products() {
             <Hero />
 
             <LeftSection
-                imageURL="src/assets/images/kite.png"
+                imageURL="/kite.png"
                 productName="Kite"
                 productDescription="Our ultra-fast flagship trading platform with streaming market data, advanced charts, and elegant UI."
                 tryDemo="#"
@@ -20,14 +20,14 @@ function Products() {
             />
 
             <RightSection
-                imageURL="src/assets/images/console.png"
+                imageURL="/console.png"
                 productName="Console"
                 productDescription="The central dashboard for your Zerodha account. Gain insights into your trades and investments."
                 learnMore="#"
             />
 
             <LeftSection
-                imageURL="src/assets/images/Coin.png"
+                imageURL="/Coin.png"
                 productName="Coin"
                 productDescription="Buy direct mutual funds online, commission-free, delivered directly to your Demat account."
                 googlePlayURL="#"
@@ -35,14 +35,14 @@ function Products() {
             />
 
             <RightSection
-                imageURL="src/assets/images/KiteConnectAPI.svg"
+                imageURL="/KiteConnectAPI.svg"
                 productName="Kite Connect API"
                 productDescription="Build your own trading platform with our powerful and easy-to-use APIs."
                 learnMore="#"
             />
 
             <LeftSection
-                imageURL="src/assets/images/Varsity.png"
+                imageURL="/Varsity.png"
                 productName="Varsity"
                 productDescription="Learn trading and investing with our comprehensive educational platform."
                 googlePlayURL="#"

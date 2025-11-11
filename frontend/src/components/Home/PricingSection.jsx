@@ -2,9 +2,9 @@ import React from "react";
 
 function PricingSection() {
     const items = [
-        { img: "src/assets/images/pricing0.svg", label: "Free account opening" },
-        { img: "src/assets/images/pricing0.svg", label: "Free equity delivery and direct mutual funds" },
-        { img: "src/assets/images/intradayTrades.svg", label: "Intraday and F&O" },
+        { img: "/pricing0.svg", label: "Free account opening" },
+        { img: "/pricing0.svg", label: "Free equity delivery and direct mutual funds" },
+        { img: "/intradayTrades.svg", label: "Intraday and F&O" },
     ];
 
     return (

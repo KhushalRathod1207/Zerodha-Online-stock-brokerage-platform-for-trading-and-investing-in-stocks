@@ -39,7 +39,7 @@ export default function StepsOpenAccount() {
             <section className="py-10 bg-gray-50">
                 <div className="flex flex-col md:flex-row items-center gap-8 px-6">
                     <img
-                        src="src/assets/images/steps-acop.svg"
+                        src="/steps-acop.svg"
                         alt="Steps illustration"
                         className="w-full md:w-1/2"
                     />
@@ -61,7 +61,7 @@ export default function StepsOpenAccount() {
             <section className="py-10 bg-white px-6">
                 <div className="flex flex-col md:flex-row items-center gap-8">
                     <img
-                        src="src/assets/images/acop-benefits.jpg"
+                        src="/acop-benefits.jpg"
                         alt="Benefits"
                         className="w-full md:w-1/2 rounded-lg shadow"
                     />

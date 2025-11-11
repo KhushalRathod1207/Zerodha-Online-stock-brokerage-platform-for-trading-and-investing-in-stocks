@@ -3,17 +3,17 @@ import React from "react";
 function Charges() {
   const pricingData = [
     {
-      img: "src/assets/images/pricing0.svg",
+      img: "/pricing0.svg",
       title: "Free equity delivery",
       desc: "All equity delivery investments (NSE, BSE) are absolutely free — ₹0 brokerage.",
     },
     {
-      img: "src/assets/images/intradayTrades.svg",
+      img: "/intradayTrades.svg",
       title: "Intraday and F&O trades",
       desc: "Flat ₹20 or 0.03% (whichever is lower) per executed order on intraday trades across equity, currency, and commodity. Flat ₹20 on all option trades.",
     },
     {
-      img: "src/assets/images/pricingEquity.svg",
+      img: "/pricingEquity.svg",
       title: "Free direct MF",
       desc: "All direct mutual fund investments are absolutely free — ₹0 commissions & DP charges.",
     },

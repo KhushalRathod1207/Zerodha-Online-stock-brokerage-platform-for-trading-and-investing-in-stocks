@@ -4,32 +4,32 @@ function Universe() {
     const partners = [
         {
             name: "Zerodha Fund House",
-            logo: "src/assets/images/zerodhafundhouse.png",
+            logo: "/zerodhafundhouse.png",
             desc: "Creating simple and transparent index funds to help you save for your goals.",
         },
         {
             name: "Sensibull",
-            logo: "src/assets/images/sensibullLogo.svg",
+            logo: "/sensibullLogo.svg",
             desc: "Options trading platform to create strategies and analyze positions easily.",
         },
         {
             name: "Tijori",
-            logo: "src/assets/images/tijori.svg",
+            logo: "/tijori.svg",
             desc: "Investment research platform offering insights on stocks, sectors, and supply chains.",
         },
         {
             name: "Streak",
-            logo: "src/assets/images/streakLogo.png",
+            logo: "/streakLogo.png",
             desc: "Create and backtest trading strategies without coding.",
         },
         {
             name: "Smallcase",
-            logo: "src/assets/images/smallcaseLogo.png",
+            logo: "/smallcaseLogo.png",
             desc: "Invest in diversified baskets of stocks or ETFs easily.",
         },
         {
             name: "Ditto",
-            logo: "src/assets/images/dittoLogo.png",
+            logo: "/dittoLogo.png",
             desc: "Get personalized advice on life and health insurance without spam.",
         },
     ];

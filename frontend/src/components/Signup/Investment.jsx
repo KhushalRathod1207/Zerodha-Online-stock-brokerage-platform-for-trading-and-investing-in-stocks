@@ -3,22 +3,22 @@ import React from "react";
 export default function Investment() {
     const options = [
         {
-            img: "src/assets/images/s1.svg",
+            img: "/s1.svg",
             title: "Stocks",
             desc: "Invest in all exchange-listed securities",
         },
         {
-            img: "src/assets/images/s2.svg",
+            img: "/s2.svg",
             title: "Mutual funds",
             desc: "Invest in commission-free direct mutual funds",
         },
         {
-            img: "src/assets/images/s3.svg",
+            img: "/s3.svg",
             title: "IPO",
             desc: "Apply to the latest IPOs instantly via UPI",
         },
         {
-            img: "src/assets/images/Sin4.svg",
+            img: "/Sin4.svg",
             title: "Futures & options",
             desc: "Hedge and mitigate market risk through simplified F&O trading",
         },

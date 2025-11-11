@@ -6,7 +6,7 @@ function EducationSection() {
             <div className="grid md:grid-cols-2 gap-10 items-center">
                 <div className="text-center">
                     <img
-                        src="src/assets/images/V.svg"
+                        src="/V.svg"
                         alt="Varsity"
                         className="w-full max-w-sm mx-auto"
                     />

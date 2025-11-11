@@ -60,7 +60,7 @@ function TrustSection() {
                 {/* Right side */}
                 <div className="text-center md:text-left">
                     <img
-                        src="src/assets/images/TrustWithConfidence.png"
+                        src="/TrustWithConfidence.png"
                         alt="Trust"
                         className="w-full mb-6"
                     />
@@ -77,7 +77,7 @@ function TrustSection() {
 
             <div className="mt-10 text-center">
                 <img
-                    src="src/assets/images/pressLogos.png"
+                    src="/pressLogos.png"
                     alt="Press Logos"
                     className="w-full max-w-lg mx-auto opacity-85 hover:opacity-100 transition"
                 />

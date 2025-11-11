@@ -5,7 +5,7 @@ function HeroSection() {
         <section className="max-w-[1100px] mx-auto py-16 text-center bg-white">
             <div className="mb-6">
                 <img
-                    src="src/assets/images/homeHero.png"
+                    src="/homeHero.png"
                     alt="Hero"
                     className="mx-auto max-h-[45vh]"
                 />

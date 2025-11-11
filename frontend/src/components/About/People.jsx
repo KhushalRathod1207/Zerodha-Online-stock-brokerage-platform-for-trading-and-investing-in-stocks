@@ -9,7 +9,7 @@ export default function People() {
                 {/* Image Section */}
                 <div className="flex flex-col items-center text-center">
                     <img
-                        src="src/assets/images/nithinKamath.jpg"
+                        src="/nithinKamath.jpg"
                         alt="Nithin Kamath, CEO"
                         className="w-56 h-56 rounded-full shadow-lg object-cover"
                     />
