@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+/* Custom font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+body {
+  @apply font-[Inter] text-gray-700;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optional global styles */
+body {
+  @apply bg-gray-50;
+}
+
+.topbar-container {
+  @apply flex justify-between items-center p-4 bg-white shadow-md;
+}
+
+.indices-container {
+  @apply flex space-x-6;
+}
+
+.index {
+  @apply font-bold text-gray-700;
+}
+
+.index-points {
+  @apply text-green-500 font-semibold;
+}
+
+.menu-container {
+  @apply flex items-center space-x-4 p-2 bg-gray-100;
+}
+
+.menu.selected {
+  @apply text-blue-600 font-bold;
+}
+
+.menu {
+  @apply text-gray-700 hover:text-blue-500 cursor-pointer;
+}
+
+.profile {
+  @apply flex items-center space-x-2 cursor-pointer;
+}
+
+.avatar {
+  @apply w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center;
+}
+
+.username {
+  @apply font-medium;
+}
