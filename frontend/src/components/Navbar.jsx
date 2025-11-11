@@ -17,7 +17,7 @@ function Navbar() {
                     onClick={closeMenu}
                 >
                     <img
-                        src="src/assets/images/logo.svg"
+                        src="/assets/images/logo.svg"
                         alt="Zerodha Logo"
                         className="h-5"
                     />
