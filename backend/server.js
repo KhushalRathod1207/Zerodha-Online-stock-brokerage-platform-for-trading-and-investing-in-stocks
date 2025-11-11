@@ -15,7 +15,7 @@ const app = express();
 // =======================
 const PORT = process.env.PORT || 4000;
 const MONGO_URL = process.env.MONGO_URL;
-const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN;
+const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN || "https://zerodha-online-stock-brokerage-plat.vercel.app";
 
 // =======================
 // ✅ MongoDB Connection
@@ -31,16 +31,21 @@ mongoose
 const corsOptions = {
     origin: [
         "http://localhost:5173",
-        "https://zerodha-online-stock-brokerage-plat.vercel.app", // ✅ Your frontend domain
+        "https://zerodha-online-stock-brokerage-plat.vercel.app",
     ],
-    credentials: true, // ✅ Allow cookies/session
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
 };
 
 app.use(cors(corsOptions));
 
+// ✅ Handle preflight (OPTIONS) requests manually
+app.options("*", cors(corsOptions));
 
+// =======================
+// ✅ Middleware
+// =======================
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -60,13 +65,12 @@ app.use(
         saveUninitialized: false,
         cookie: {
             httpOnly: true,
-            secure: process.env.NODE_ENV === "production", // ✅ only HTTPS
-            sameSite: process.env.NODE_ENV === "production" ? "none" : "lax", // ✅ allow cross-origin cookies
+            secure: process.env.NODE_ENV === "production", // ✅ HTTPS in production
+            sameSite: process.env.NODE_ENV === "production" ? "none" : "lax", // ✅ Cross-origin cookies
             maxAge: 1000 * 60 * 60 * 24 * 7, // 7 days
         },
     })
 );
-
 
 // =======================
 // ✅ Passport Config
@@ -100,6 +104,6 @@ app.get("/", (req, res) => {
 // =======================
 // ✅ Start Server
 // =======================
-app.listen(PORT, () =>
-    console.log(`🚀 Server live on port ${PORT} (Render-ready)`)
-);
+app.listen(PORT, () => {
+    console.log(`🚀 Server live on port ${PORT} (Render-ready)`);
+});
