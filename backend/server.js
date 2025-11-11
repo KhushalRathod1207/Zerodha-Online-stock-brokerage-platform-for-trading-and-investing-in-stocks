@@ -28,15 +28,18 @@ mongoose
 // =======================
 // ✅ CORS Configuration
 // =======================
-app.use(
-    cors({
-        origin: [
-            "http://localhost:5173", // for local dev
-            CLIENT_ORIGIN, // deployed frontend (from .env)
-        ],
-        credentials: true,
-    })
-);
+const corsOptions = {
+    origin: [
+        "http://localhost:5173",
+        "https://zerodha-online-stock-brokerage-plat.vercel.app", // ✅ Your frontend domain
+    ],
+    credentials: true, // ✅ Allow cookies/session
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+};
+
+app.use(cors(corsOptions));
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -57,12 +60,13 @@ app.use(
         saveUninitialized: false,
         cookie: {
             httpOnly: true,
-            secure: process.env.NODE_ENV === "production", // ✅ HTTPS only in production
-            sameSite: process.env.NODE_ENV === "production" ? "none" : "lax", // ✅ allow cross-site cookies
+            secure: process.env.NODE_ENV === "production", // ✅ only HTTPS
+            sameSite: process.env.NODE_ENV === "production" ? "none" : "lax", // ✅ allow cross-origin cookies
             maxAge: 1000 * 60 * 60 * 24 * 7, // 7 days
         },
     })
 );
+
 
 // =======================
 // ✅ Passport Config
