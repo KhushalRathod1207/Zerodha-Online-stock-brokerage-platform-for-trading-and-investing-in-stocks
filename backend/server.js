@@ -9,31 +9,39 @@ const LocalStrategy = require("passport-local");
 const User = require("./models/User");
 
 const app = express();
+
+// ✅ Render will provide PORT dynamically
 const PORT = process.env.PORT || 4000;
 const MONGO_URL = process.env.MONGO_URL;
 
-// ========== MongoDB Connection ==========
+// =======================
+// ✅ MongoDB Connection
+// =======================
 mongoose
     .connect(MONGO_URL)
     .then(() => console.log("✅ Connected to MongoDB"))
     .catch((err) => console.error("❌ MongoDB connection error:", err));
 
-// ========== CORS ==========
-app.use(cors({
-    origin: [
-        "http://localhost:3000",
-        "http://localhost:5173",
-        "http://127.0.0.1:3000",
-        "http://127.0.0.1:5173"
-    ],
-    credentials: true,
-}));
-
+// =======================
+// ✅ CORS Configuration
+// =======================
+app.use(
+    cors({
+        origin: [
+            "http://localhost:3000",
+            "http://localhost:5173",
+            "https://zerodha-frontend.onrender.com", // ✅ Add your deployed frontend Render URL
+        ],
+        credentials: true,
+    })
+);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// ========== Session Store ==========
+// =======================
+// ✅ Session Store
+// =======================
 const store = MongoStore.create({
     mongoUrl: MONGO_URL,
     collectionName: "sessions",
@@ -47,22 +55,25 @@ app.use(
         saveUninitialized: false,
         cookie: {
             httpOnly: true,
-            secure: false, // ⚠️ use true only in production with HTTPS
-            sameSite: "lax", // important for cross-origin cookies
-            maxAge: 1000 * 60 * 60 * 24 * 7,
+            secure: process.env.NODE_ENV === "production", // ✅ Auto-handles HTTPS
+            sameSite: process.env.NODE_ENV === "production" ? "none" : "lax", // ✅ Cross-site cookie fix
+            maxAge: 1000 * 60 * 60 * 24 * 7, // 7 days
         },
     })
 );
 
-
-// ========== Passport Config ==========
+// =======================
+// ✅ Passport Config
+// =======================
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-// ========== Routes ==========
+// =======================
+// ✅ Routes
+// =======================
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/otp", require("./routes/otpRoutes"));
 app.use("/api/holdings", require("./routes/holdingsRoutes"));
@@ -73,12 +84,16 @@ app.use("/api/stocks", require("./routes/stockRoutes"));
 app.use("/api/funds", require("./routes/fundsRoutes"));
 app.use("/api/users", require("./routes/profileRoutes"));
 
-
-
-// ========== Root ==========
+// =======================
+// ✅ Health Check Route
+// =======================
 app.get("/", (req, res) => {
-    res.send("🚀 Zerodha Backend is running successfully!");
+    res.send("🚀 Zerodha Backend running successfully on Render!");
 });
 
-// ========== Start Server ==========
-app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
+// =======================
+// ✅ Start Server
+// =======================
+app.listen(PORT, () =>
+    console.log(`🚀 Server live on port ${PORT} (Render-ready)`)
+);
