@@ -27,7 +27,7 @@ function Products() {
             />
 
             <LeftSection
-                imageURL="/Coin.png"
+                imageURL="/coin.png"
                 productName="Coin"
                 productDescription="Buy direct mutual funds online, commission-free, delivered directly to your Demat account."
                 googlePlayURL="#"
@@ -35,14 +35,14 @@ function Products() {
             />
 
             <RightSection
-                imageURL="/KiteConnectAPI.svg"
+                imageURL="/kiteConnectAPI.svg"
                 productName="Kite Connect API"
                 productDescription="Build your own trading platform with our powerful and easy-to-use APIs."
                 learnMore="#"
             />
 
             <LeftSection
-                imageURL="/Varsity.png"
+                imageURL="/varsity.png"
                 productName="Varsity"
                 productDescription="Learn trading and investing with our comprehensive educational platform."
                 googlePlayURL="#"
