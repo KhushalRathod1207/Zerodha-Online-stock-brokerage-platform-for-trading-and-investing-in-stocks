@@ -10,9 +10,12 @@ const User = require("./models/User");
 
 const app = express();
 
-// ✅ Render will provide PORT dynamically
+// =======================
+// ✅ Environment Variables
+// =======================
 const PORT = process.env.PORT || 4000;
 const MONGO_URL = process.env.MONGO_URL;
+const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN;
 
 // =======================
 // ✅ MongoDB Connection
@@ -28,9 +31,8 @@ mongoose
 app.use(
     cors({
         origin: [
-            "http://localhost:3000",
-            "http://localhost:5173",
-            "https://zerodha-frontend.onrender.com", // ✅ Add your deployed frontend Render URL
+            "http://localhost:5173", // for local dev
+            CLIENT_ORIGIN, // deployed frontend (from .env)
         ],
         credentials: true,
     })
@@ -55,8 +57,8 @@ app.use(
         saveUninitialized: false,
         cookie: {
             httpOnly: true,
-            secure: process.env.NODE_ENV === "production", // ✅ Auto-handles HTTPS
-            sameSite: process.env.NODE_ENV === "production" ? "none" : "lax", // ✅ Cross-site cookie fix
+            secure: process.env.NODE_ENV === "production", // ✅ HTTPS only in production
+            sameSite: process.env.NODE_ENV === "production" ? "none" : "lax", // ✅ allow cross-site cookies
             maxAge: 1000 * 60 * 60 * 24 * 7, // 7 days
         },
     })
